@@ -3,7 +3,7 @@
 import string
 from time import sleep
 
-max_wrong = 3 # how many letters are allowed to be guessed wrong ("how many lines does the man have?")
+max_wrong = 8 # how many letters are allowed to be guessed wrong ("how many lines does the man have?")
 word = 'QUARANTINE' # All CAPS!
 to_guess = set(word) # only unique letters matter -> set
 hit = []
@@ -57,7 +57,8 @@ def play():
         letter = guess()
         
         if letter in hit or letter in miss:
-            print('You already guessed that letter')
+            print('\n\n')
+            print('You already guessed that letter.')
             print('These are letters that are NOT in the word:')
             show_wrong_guesses()
         elif letter in to_guess:
